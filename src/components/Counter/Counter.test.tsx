@@ -4,8 +4,9 @@ import { Counter } from "./"
 
 describe("Counter", () => {
   test("render", () => {
-    const { asFragment } = render(<Counter />)
+    const { asFragment, getByText } = render(<Counter />)
     expect(asFragment()).toMatchSnapshot()
+    getByText('Count: 0');
   })
   test("click:count", () => {
     render(<Counter />)
